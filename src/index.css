@@ -17,8 +17,11 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* PharmEasy inspired color scheme */
+    --primary: 161 94% 30%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 161 94% 85%;
+    --primary-dark: 161 94% 20%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -26,17 +29,39 @@ All colors MUST be HSL.
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 161 94% 30%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 161 94% 30%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+    
+    /* Dengue theme colors */
+    --health-primary: 161 94% 30%;
+    --health-secondary: 39 100% 50%;
+    --health-danger: 0 84% 60%;
+    --health-warning: 39 100% 50%;
+    --health-success: 142 76% 36%;
+    --health-info: 217 91% 60%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--health-primary)), hsl(var(--health-info)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--health-primary) / 0.9), hsl(var(--health-info) / 0.8));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--primary-light) / 0.05));
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px hsl(var(--health-primary) / 0.1);
+    --shadow-medium: 0 8px 30px hsl(var(--health-primary) / 0.15);
+    --shadow-strong: 0 15px 40px hsl(var(--health-primary) / 0.2);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -65,8 +90,10 @@ All colors MUST be HSL.
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 161 94% 35%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 161 94% 25%;
+    --primary-dark: 161 94% 15%;
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -74,15 +101,28 @@ All colors MUST be HSL.
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 161 94% 35%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --ring: 161 94% 35%;
+    
+    /* Dark mode health colors */
+    --health-primary: 161 94% 35%;
+    --health-secondary: 39 100% 45%;
+    --health-danger: 0 84% 55%;
+    --health-warning: 39 100% 45%;
+    --health-success: 142 76% 31%;
+    --health-info: 217 91% 55%;
+    
+    /* Dark gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--health-primary)), hsl(var(--health-info)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--health-primary) / 0.9), hsl(var(--health-info) / 0.8));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--primary-light) / 0.1));
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -99,7 +139,73 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  /* Health Research Components */
+  .hero-section {
+    @apply relative min-h-screen flex items-center justify-center;
+    background: var(--gradient-hero);
+  }
+  
+  .hero-content {
+    @apply text-center text-white z-10 relative;
+  }
+  
+  .section-card {
+    @apply bg-card rounded-xl p-8 shadow-lg;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-smooth);
+  }
+  
+  .section-card:hover {
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-2px);
+  }
+  
+  .medical-insight {
+    @apply border-l-4 border-health-primary bg-primary-light/10 p-6 rounded-r-lg;
+  }
+  
+  .stat-card {
+    @apply bg-white rounded-lg p-6 text-center;
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .toc-sticky {
+    @apply fixed left-4 top-1/2 transform -translate-y-1/2 bg-white/90 backdrop-blur-sm rounded-lg p-4 shadow-lg z-50;
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+  
+  .share-bar {
+    @apply fixed right-4 top-1/2 transform -translate-y-1/2 bg-white/90 backdrop-blur-sm rounded-lg p-2 shadow-lg z-50 flex flex-col gap-2;
+  }
+  
+  .fade-in-up {
+    @apply opacity-0 translate-y-8;
+    transition: var(--transition-smooth);
+  }
+  
+  .fade-in-up.in-view {
+    @apply opacity-100 translate-y-0;
+  }
+  
+  .section-snap {
+    scroll-snap-type: y mandatory;
+  }
+  
+  .section-snap > section {
+    scroll-snap-align: start;
+    min-height: 100vh;
   }
 }
