@@ -16,15 +16,17 @@ export const ReadMoreCard: React.FC<ReadMoreCardProps> = ({
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div className={`section-card ${className}`}>
-      <div className="space-y-4">
-        {summary}
+    <div className={`section-card h-full flex flex-col ${className}`}>
+      <div className="space-y-4 flex-1 flex flex-col">
+        <div className="flex-1">
+          {summary}
+        </div>
         
         {!isExpanded && (
           <Button
             onClick={() => setIsExpanded(true)}
             variant="outline"
-            className="w-full justify-between"
+            className="w-full justify-between mt-auto"
           >
             Read More
             <ChevronDown className="h-4 w-4" />
@@ -33,13 +35,13 @@ export const ReadMoreCard: React.FC<ReadMoreCardProps> = ({
         
         {isExpanded && (
           <>
-            <div className="space-y-4 fade-in-up in-view">
+            <div className="space-y-4 fade-in-up in-view flex-1">
               {children}
             </div>
             <Button
               onClick={() => setIsExpanded(false)}
               variant="outline"
-              className="w-full justify-between"
+              className="w-full justify-between mt-auto"
             >
               Read Less
               <ChevronUp className="h-4 w-4" />

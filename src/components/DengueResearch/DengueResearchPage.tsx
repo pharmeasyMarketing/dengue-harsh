@@ -193,57 +193,63 @@ export const DengueResearchPage: React.FC = () => {
                 </h2>
               </div>
 
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <ReadMoreCard
-                  className="fade-in-up"
-                  summary={
-                    <div className="space-y-4">
-                      <h3 className="text-xl font-semibold flex items-center gap-2">
-                        <TrendingUp className="h-5 w-5 text-health-info" />
-                        Key Findings
-                      </h3>
-                      <ul className="space-y-2 text-lg">
-                        <li className="flex items-start gap-2">
-                          <span className="w-2 h-2 bg-health-success rounded-full mt-3 flex-shrink-0"></span>
-                          Tests increased annually with earlier seasonal testing (May vs June)
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="w-2 h-2 bg-health-info rounded-full mt-3 flex-shrink-0"></span>
-                          Positivity rate steadily decreasing due to increased awareness
-                        </li>
-                      </ul>
+              <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+                <div className="flex flex-col">
+                  <ReadMoreCard
+                    className="fade-in-up flex-1"
+                    summary={
+                      <div className="space-y-4">
+                        <h3 className="text-xl font-semibold flex items-center gap-2">
+                          <TrendingUp className="h-5 w-5 text-health-info" />
+                          Key Findings
+                        </h3>
+                        <ul className="space-y-2 text-lg">
+                          <li className="flex items-start gap-2">
+                            <span className="w-2 h-2 bg-health-success rounded-full mt-3 flex-shrink-0"></span>
+                            Tests increased annually with earlier seasonal testing (May vs June)
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="w-2 h-2 bg-health-info rounded-full mt-3 flex-shrink-0"></span>
+                            Positivity rate steadily decreasing due to increased awareness
+                          </li>
+                        </ul>
+                      </div>
+                    }
+                  >
+                    <div className="space-y-6">
+                      <p className="text-lg leading-relaxed">
+                        Our lab data reveals a clear shift in dengue testing patterns. Over the past few
+                        years, not only has the total number of dengue tests increased annually, but people
+                        are also getting tested earlier in the season. For example, in 2024, we observed a
+                        notable rise in dengue test bookings starting as early as May, compared to June in
+                        previous years.
+                      </p>
+                      <p className="text-lg leading-relaxed">
+                        At the same time, as you can see, the dengue positivity rate has been steadily
+                        decreasing. This trend, in fact, reveals that increased public awareness is leading
+                        to more proactive testing. As more people are tested to determine the cause of their
+                        fever, the lower percentage of positive results suggests that other causes of fever,
+                        such as typhoid, influenza, and chikungunya, may be at play.
+                      </p>
                     </div>
-                  }
-                >
-                  <div className="space-y-6">
-                    <p className="text-lg leading-relaxed">
-                      Our lab data reveals a clear shift in dengue testing patterns. Over the past few
-                      years, not only has the total number of dengue tests increased annually, but people
-                      are also getting tested earlier in the season. For example, in 2024, we observed a
-                      notable rise in dengue test bookings starting as early as May, compared to June in
-                      previous years.
-                    </p>
-                    <p className="text-lg leading-relaxed">
-                      At the same time, as you can see, the dengue positivity rate has been steadily
-                      decreasing. This trend, in fact, reveals that increased public awareness is leading
-                      to more proactive testing. As more people are tested to determine the cause of their
-                      fever, the lower percentage of positive results suggests that other causes of fever,
-                      such as typhoid, influenza, and chikungunya, may be at play.
-                    </p>
-                  </div>
-                </ReadMoreCard>
+                  </ReadMoreCard>
+                </div>
 
-                <div className="space-y-6 fade-in-up">
-                  <img 
-                    src="https://pharmeasy.in/blog/dengue/PE_DengueStudy_Page02_Graph01.webp" 
-                    alt="Tests Done for the 26 months" 
-                    className="w-full rounded-lg shadow-medium"
-                  />
-                  <img 
-                    src="https://pharmeasy.in/blog/dengue/PE_DengueStudy_Page02_Graph02.webp" 
-                    alt="Tests Done Vs Positivity Rate" 
-                    className="w-full rounded-lg shadow-medium"
-                  />
+                <div className="flex flex-col space-y-6 fade-in-up">
+                  <div className="bg-white rounded-lg shadow-medium p-6 flex-1">
+                    <img 
+                      src="https://pharmeasy.in/blog/dengue/PE_DengueStudy_Page02_Graph01.webp" 
+                      alt="Tests Done for the 26 months" 
+                      className="w-full rounded-lg"
+                    />
+                  </div>
+                  <div className="bg-white rounded-lg shadow-medium p-6 flex-1">
+                    <img 
+                      src="https://pharmeasy.in/blog/dengue/PE_DengueStudy_Page02_Graph02.webp" 
+                      alt="Tests Done Vs Positivity Rate" 
+                      className="w-full rounded-lg"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -263,59 +269,63 @@ export const DengueResearchPage: React.FC = () => {
                 </h2>
               </div>
 
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <ReadMoreCard
-                  className="fade-in-up"
-                  summary={
+              <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+                <div className="flex flex-col">
+                  <ReadMoreCard
+                    className="fade-in-up flex-1"
+                    summary={
+                      <div className="space-y-6">
+                        <h3 className="text-xl font-semibold flex items-center gap-2">
+                          <Droplets className="h-5 w-5 text-health-secondary" />
+                          Weather Conditions for Dengue
+                        </h3>
+                        <div className="grid grid-cols-2 gap-4">
+                          <StatCard
+                            title="Temperature"
+                            value=">27°C"
+                            description="Ideal for mosquito breeding"
+                          />
+                          <StatCard
+                            title="Humidity"
+                            value="60-78%"
+                            description="Perfect breeding conditions"
+                          />
+                        </div>
+                        <div className="p-4 bg-health-secondary/10 rounded-lg">
+                          <p className="font-semibold text-health-secondary">
+                            In short, dengue doesn't just coexist with the monsoon season; it shapes how the disease spreads.
+                          </p>
+                        </div>
+                      </div>
+                    }
+                  >
                     <div className="space-y-6">
-                      <h3 className="text-xl font-semibold flex items-center gap-2">
-                        <Droplets className="h-5 w-5 text-health-secondary" />
-                        Weather Conditions for Dengue
-                      </h3>
-                      <div className="grid grid-cols-2 gap-4">
-                        <StatCard
-                          title="Temperature"
-                          value=">27°C"
-                          description="Ideal for mosquito breeding"
-                        />
-                        <StatCard
-                          title="Humidity"
-                          value="60-78%"
-                          description="Perfect breeding conditions"
-                        />
-                      </div>
-                      <div className="p-4 bg-health-secondary/10 rounded-lg">
-                        <p className="font-semibold text-health-secondary">
-                          In short, dengue doesn't just coexist with the monsoon season; it shapes how the disease spreads.
-                        </p>
-                      </div>
+                      <p className="text-lg leading-relaxed">
+                        Dengue follows a clear pattern tied to the Indian monsoon. Every year, when the
+                        rains begin in June, the humidity increases, creating an ideal breeding ground
+                        for mosquitoes, particularly in stagnant water. This also raises the risk of
+                        outbreaks. Lab data shows that dengue cases begin to rise in July, peak from
+                        August to October, and decline by December.
+                      </p>
+                      <p className="text-lg leading-relaxed">
+                        Warm temperatures above 27°C, combined with humidity levels between 60% and 78%,
+                        and steady rainfall, create ideal conditions for the Aedes mosquito to thrive.
+                        Therefore, it's fair to say that the weather plays a crucial role.
+                        Interestingly, very heavy rainfall can sometimes reduce mosquito numbers by
+                        washing away their larvae.
+                      </p>
                     </div>
-                  }
-                >
-                  <div className="space-y-6">
-                    <p className="text-lg leading-relaxed">
-                      Dengue follows a clear pattern tied to the Indian monsoon. Every year, when the
-                      rains begin in June, the humidity increases, creating an ideal breeding ground
-                      for mosquitoes, particularly in stagnant water. This also raises the risk of
-                      outbreaks. Lab data shows that dengue cases begin to rise in July, peak from
-                      August to October, and decline by December.
-                    </p>
-                    <p className="text-lg leading-relaxed">
-                      Warm temperatures above 27°C, combined with humidity levels between 60% and 78%,
-                      and steady rainfall, create ideal conditions for the Aedes mosquito to thrive.
-                      Therefore, it's fair to say that the weather plays a crucial role.
-                      Interestingly, very heavy rainfall can sometimes reduce mosquito numbers by
-                      washing away their larvae.
-                    </p>
-                  </div>
-                </ReadMoreCard>
+                  </ReadMoreCard>
+                </div>
 
-                <div className="fade-in-up">
-                  <img 
-                    src="https://pharmeasy.in/blog/dengue/PE_DengueStudy_MosquittoLifeCycle_01.webp" 
-                    alt="Infographic of how monsoon links to dengue" 
-                    className="w-full rounded-lg shadow-medium"
-                  />
+                <div className="flex flex-col fade-in-up">
+                  <div className="bg-white rounded-lg shadow-medium p-6 flex-1 flex items-center justify-center">
+                    <img 
+                      src="https://pharmeasy.in/blog/dengue/PE_DengueStudy_MosquittoLifeCycle_01.webp" 
+                      alt="Infographic of how monsoon links to dengue" 
+                      className="w-full h-auto max-h-full object-contain rounded-lg"
+                    />
+                  </div>
                 </div>
               </div>
 
@@ -343,44 +353,48 @@ export const DengueResearchPage: React.FC = () => {
                 </h2>
               </div>
 
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <ReadMoreCard
-                  className="fade-in-up"
-                  summary={
+              <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+                <div className="flex flex-col">
+                  <ReadMoreCard
+                    className="fade-in-up flex-1"
+                    summary={
+                      <div className="space-y-6">
+                        <h3 className="text-xl font-semibold flex items-center gap-2">
+                          <Users className="h-5 w-5 text-health-warning" />
+                          High-Risk Age Groups
+                        </h3>
+                        <StatCard
+                          title="Most Affected"
+                          value="Ages 11-30"
+                          description="Highest dengue positivity rates"
+                          trend="up"
+                        />
+                        <p className="text-lg leading-relaxed">
+                          PharmEasy Labs data shows that individuals aged 11 to 30 have the highest dengue
+                          positivity rates when compared to other age groups. This trend likely reflects
+                          more outdoor activity and exposure.
+                        </p>
+                      </div>
+                    }
+                  >
                     <div className="space-y-6">
-                      <h3 className="text-xl font-semibold flex items-center gap-2">
-                        <Users className="h-5 w-5 text-health-warning" />
-                        High-Risk Age Groups
-                      </h3>
-                      <StatCard
-                        title="Most Affected"
-                        value="Ages 11-30"
-                        description="Highest dengue positivity rates"
-                        trend="up"
+                      <MedicalInsight
+                        quote="Children most often play outside in fields exposing themselves to risk, likewise individuals of the working age (18 to 60 years) who do physical work for a living specially in outdoor settings also get exposed thus increasing their risk to infection."
+                        doctor="Dr. Nayana Shetty"
+                        credentials="MBBS MD"
                       />
-                      <p className="text-lg leading-relaxed">
-                        PharmEasy Labs data shows that individuals aged 11 to 30 have the highest dengue
-                        positivity rates when compared to other age groups. This trend likely reflects
-                        more outdoor activity and exposure.
-                      </p>
                     </div>
-                  }
-                >
-                  <div className="space-y-6">
-                    <MedicalInsight
-                      quote="Children most often play outside in fields exposing themselves to risk, likewise individuals of the working age (18 to 60 years) who do physical work for a living specially in outdoor settings also get exposed thus increasing their risk to infection."
-                      doctor="Dr. Nayana Shetty"
-                      credentials="MBBS MD"
+                  </ReadMoreCard>
+                </div>
+
+                <div className="flex flex-col fade-in-up">
+                  <div className="bg-white rounded-lg shadow-medium p-6 flex-1 flex items-center justify-center">
+                    <img 
+                      src="https://pharmeasy.in/blog/dengue/PE_DengueStudy_WhoIsAtMostRisk_01.webp" 
+                      alt="Who is at most risk infographic" 
+                      className="w-full h-auto max-h-full object-contain rounded-lg"
                     />
                   </div>
-                </ReadMoreCard>
-
-                <div className="fade-in-up">
-                  <img 
-                    src="https://pharmeasy.in/blog/dengue/PE_DengueStudy_WhoIsAtMostRisk_01.webp" 
-                    alt="Who is at most risk infographic" 
-                    className="w-full rounded-lg shadow-medium"
-                  />
                 </div>
               </div>
             </div>

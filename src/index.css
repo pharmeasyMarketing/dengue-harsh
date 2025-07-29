@@ -161,7 +161,7 @@ All colors MUST be HSL.
   }
   
   .section-card {
-    @apply bg-card rounded-xl p-8 shadow-lg;
+    @apply bg-card rounded-xl p-8 shadow-lg h-full;
     background: var(--gradient-card);
     box-shadow: var(--shadow-soft);
     transition: var(--transition-smooth);
