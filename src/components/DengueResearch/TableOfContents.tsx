@@ -30,6 +30,7 @@ interface TableOfContentsProps {
 export const TableOfContents: React.FC<TableOfContentsProps> = ({ activeSection }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isDesktopCollapsed, setIsDesktopCollapsed] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -97,23 +98,39 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ activeSection 
   }
 
   return (
-    <div className="toc-sticky hidden lg:block w-64">
-      <h3 className="text-lg font-semibold mb-4 text-health-primary">Contents</h3>
-      <nav className="space-y-1">
-        {sections.map((section) => (
-          <button
-            key={section.id}
-            onClick={() => scrollToSection(section.id)}
-            className={`w-full text-left text-sm p-3 rounded-lg transition-colors ${
-              activeSection === section.id
-                ? 'bg-health-primary text-white font-medium'
-                : 'hover:bg-gray-100'
-            }`}
-          >
-            {section.title}
-          </button>
-        ))}
-      </nav>
-    </div>
+    <>
+      <Button
+        onClick={() => setIsDesktopCollapsed(!isDesktopCollapsed)}
+        className="fixed top-4 left-4 z-50 bg-health-primary hover:bg-health-primary/90 hidden lg:flex"
+        size="sm"
+      >
+        <Menu className="h-4 w-4" />
+      </Button>
+      
+      <div className={`toc-sticky hidden lg:block transition-all duration-300 ${
+        isDesktopCollapsed ? 'w-0 overflow-hidden' : 'w-64'
+      }`}>
+        {!isDesktopCollapsed && (
+          <>
+            <h3 className="text-lg font-semibold mb-4 text-health-primary">Contents</h3>
+            <nav className="space-y-1">
+              {sections.map((section) => (
+                <button
+                  key={section.id}
+                  onClick={() => scrollToSection(section.id)}
+                  className={`w-full text-left text-sm p-3 rounded-lg transition-colors ${
+                    activeSection === section.id
+                      ? 'bg-health-primary text-white font-medium'
+                      : 'hover:bg-gray-100'
+                  }`}
+                >
+                  {section.title}
+                </button>
+              ))}
+            </nav>
+          </>
+        )}
+      </div>
+    </>
   );
 };
