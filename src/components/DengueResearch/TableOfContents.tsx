@@ -107,8 +107,8 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ activeSection 
         <Menu className="h-4 w-4" />
       </Button>
       
-      <div className={`toc-sticky hidden lg:block transition-all duration-300 ${
-        isDesktopCollapsed ? 'w-0 overflow-hidden' : 'w-64'
+      <div className={`toc-sticky transition-all duration-300 ${
+        isDesktopCollapsed ? 'hidden' : 'hidden lg:block w-64'
       }`}>
         {!isDesktopCollapsed && (
           <>
