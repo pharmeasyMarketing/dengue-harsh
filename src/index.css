@@ -161,7 +161,7 @@ All colors MUST be HSL.
   }
   
   .section-card {
-    @apply bg-card rounded-xl p-8 shadow-lg h-full;
+    @apply bg-card rounded-xl p-4 sm:p-6 lg:p-8 shadow-lg h-full;
     background: var(--gradient-card);
     box-shadow: var(--shadow-soft);
     transition: var(--transition-smooth);
@@ -173,22 +173,24 @@ All colors MUST be HSL.
   }
   
   .medical-insight {
-    @apply border-l-4 border-health-primary bg-primary-light/10 p-6 rounded-r-lg;
+    @apply border-l-4 border-health-primary bg-primary-light/10 p-4 sm:p-6 rounded-r-lg;
   }
   
   .stat-card {
-    @apply bg-white rounded-lg p-6 text-center;
+    @apply bg-white rounded-lg p-4 sm:p-6 text-center;
     box-shadow: var(--shadow-soft);
   }
   
   .toc-sticky {
-    @apply fixed left-4 top-1/2 transform -translate-y-1/2 bg-white/90 backdrop-blur-sm rounded-lg p-4 shadow-lg z-50;
+    @apply fixed left-2 lg:left-4 top-1/2 transform -translate-y-1/2 bg-white/90 backdrop-blur-sm rounded-lg p-2 lg:p-4 shadow-lg z-50;
     max-height: 70vh;
     overflow-y: auto;
+    width: auto;
+    min-width: 200px;
   }
   
   .share-bar {
-    @apply fixed right-4 top-1/2 transform -translate-y-1/2 bg-white/90 backdrop-blur-sm rounded-lg p-2 shadow-lg z-50 flex flex-col gap-2;
+    @apply fixed right-2 lg:right-4 top-1/2 transform -translate-y-1/2 bg-white/90 backdrop-blur-sm rounded-lg p-2 shadow-lg z-50 flex flex-col gap-2;
   }
   
   .fade-in-up {
@@ -198,6 +200,42 @@ All colors MUST be HSL.
   
   .fade-in-up.in-view {
     @apply opacity-100 translate-y-0;
+  }
+
+  /* Mobile responsiveness improvements */
+  @media (max-width: 640px) {
+    .hero-section {
+      @apply min-h-[80vh] px-4;
+    }
+    
+    .hero-content h1 {
+      @apply leading-tight;
+    }
+    
+    .container {
+      @apply px-4;
+    }
+    
+    /* Hide table of contents on very small screens */
+    .toc-sticky {
+      @apply hidden sm:block;
+    }
+    
+    .share-bar {
+      @apply hidden sm:flex;
+    }
+  }
+
+  /* Tablet responsiveness */
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .toc-sticky {
+      @apply left-2;
+      min-width: 180px;
+    }
+    
+    .share-bar {
+      @apply right-2;
+    }
   }
   
   .section-snap {

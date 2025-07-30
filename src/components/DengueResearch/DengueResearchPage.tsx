@@ -70,16 +70,16 @@ export const DengueResearchPage: React.FC = () => {
       <main className="section-snap">
         {/* Hero Section */}
         <section id="hero" className="hero-section">
-          <div className="container mx-auto px-6 text-center">
+          <div className="container mx-auto px-4 sm:px-6 text-center">
             <div className="hero-content max-w-4xl mx-auto">
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 fade-in-up">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-6 fade-in-up">
                 Dengue: The Silent Threat of the Monsoon Season
               </h1>
-              <p className="text-xl md:text-2xl mb-8 opacity-90 fade-in-up">
+              <p className="text-lg sm:text-xl md:text-2xl mb-8 opacity-90 fade-in-up">
                 Understanding dengue patterns, demographics, and seasonal trends through
                 PharmEasy Lab data and global research insights.
               </p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 fade-in-up">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-12 fade-in-up">
                 <StatCard
                   title="Study Duration"
                   value="26 Months"
@@ -111,13 +111,13 @@ export const DengueResearchPage: React.FC = () => {
 
         {/* Introduction Section */}
         <section id="introduction" className="min-h-screen flex items-center py-20 bg-white">
-          <div className="container mx-auto px-6 lg:px-12">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-12">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16 fade-in-up">
                 <span className="inline-block px-4 py-2 bg-health-primary/10 text-health-primary rounded-full text-sm font-medium mb-4">
                   INTRODUCTION
                 </span>
-                <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
                   Why Dengue Deserves Your Attention?
                 </h2>
               </div>
@@ -125,9 +125,9 @@ export const DengueResearchPage: React.FC = () => {
               <ReadMoreCard
                 className="fade-in-up"
                 summary={
-                  <div className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-8 items-center">
-                      <div>
+                    <div className="space-y-6">
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-start lg:items-center">
+                        <div>
                         <p className="text-lg leading-relaxed">
                           We look forward to the monsoon, including the cool breeze, the scent of fresh rain, and a
                           much-needed break from the summer heat. However, these are not the only things that
@@ -139,7 +139,7 @@ export const DengueResearchPage: React.FC = () => {
                           </p>
                         </div>
                       </div>
-                      <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <StatCard
                           title="Global Trend"
                           value="Rising"
@@ -182,18 +182,18 @@ export const DengueResearchPage: React.FC = () => {
 
         {/* Trend Analysis Section */}
         <section id="trends" className="min-h-screen flex items-center py-20 bg-gray-50">
-          <div className="container mx-auto px-6 lg:px-12">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-12">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16 fade-in-up">
                 <span className="inline-block px-4 py-2 bg-health-info/10 text-health-info rounded-full text-sm font-medium mb-4">
                   TREND ANALYSIS
                 </span>
-                <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
                   How Dengue Trends Have Shifted Over the Years
                 </h2>
               </div>
 
-              <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-stretch">
                 <div className="flex flex-col">
                   <div className="section-card fade-in-up flex-1">
                     <div className="space-y-6">
@@ -232,14 +232,14 @@ export const DengueResearchPage: React.FC = () => {
                 </div>
 
                 <div className="flex flex-col space-y-6 fade-in-up">
-                  <div className="bg-white rounded-lg shadow-medium p-6 flex-1">
+                  <div className="bg-white rounded-lg shadow-medium p-4 sm:p-6 flex-1">
                     <img 
                       src="https://pharmeasy.in/blog/dengue/PE_DengueStudy_Page02_Graph01.webp" 
                       alt="Tests Done for the 26 months" 
                       className="w-full rounded-lg"
                     />
                   </div>
-                  <div className="bg-white rounded-lg shadow-medium p-6 flex-1">
+                  <div className="bg-white rounded-lg shadow-medium p-4 sm:p-6 flex-1">
                     <img 
                       src="https://pharmeasy.in/blog/dengue/PE_DengueStudy_Page02_Graph02.webp" 
                       alt="Tests Done Vs Positivity Rate" 
@@ -254,18 +254,18 @@ export const DengueResearchPage: React.FC = () => {
 
         {/* Monsoon Section */}
         <section id="monsoon" className="min-h-screen flex items-center py-20 bg-white">
-          <div className="container mx-auto px-6 lg:px-12">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-12">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16 fade-in-up">
                 <span className="inline-block px-4 py-2 bg-health-secondary/10 text-health-secondary rounded-full text-sm font-medium mb-4">
                   DENGUE & MONSOON
                 </span>
-                <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
                   The Monsoon-Dengue Link
                 </h2>
               </div>
 
-              <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-stretch">
                 <div className="flex flex-col">
                   <div className="section-card fade-in-up flex-1">
                     <div className="space-y-6">
@@ -273,7 +273,7 @@ export const DengueResearchPage: React.FC = () => {
                         <Droplets className="h-5 w-5 text-health-secondary" />
                         Weather Conditions for Dengue
                       </h3>
-                      <div className="grid grid-cols-2 gap-4">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <StatCard
                           title="Temperature"
                           value=">27°C"
