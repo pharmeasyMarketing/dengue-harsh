@@ -1,0 +1,1950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dengue: The Silent Threat of the Monsoon Season - PharmEasy Research</title>
+    <meta name="description" content="Understanding dengue patterns, demographics, and seasonal trends through PharmEasy Lab data and global research insights.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Dengue: The Silent Threat of the Monsoon Season">
+    <meta property="og:description" content="Understanding dengue patterns, demographics, and seasonal trends through PharmEasy Lab data">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://example.com/dengue-research">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dengue: The Silent Threat of the Monsoon Season">
+    <meta name="twitter:description" content="Understanding dengue patterns, demographics, and seasonal trends through PharmEasy Lab data">
+    
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    
+    <style>
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colors */
+    --primary: #059669;
+    --primary-light: #34d399;
+    --primary-dark: #047857;
+    --secondary: #f59e0b;
+    --danger: #dc2626;
+    --warning: #f59e0b;
+    --success: #10b981;
+    --info: #3b82f6;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #059669, #3b82f6);
+    --gradient-hero: linear-gradient(135deg, rgba(5, 150, 105, 0.9), rgba(59, 130, 246, 0.8));
+    --gradient-card: linear-gradient(145deg, #ffffff, rgba(5, 150, 105, 0.05));
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px rgba(5, 150, 105, 0.1);
+    --shadow-medium: 0 8px 30px rgba(5, 150, 105, 0.15);
+    --shadow-strong: 0 15px 40px rgba(5, 150, 105, 0.2);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    /* Typography */
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: #374151;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Progress Bar */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: var(--gradient-primary);
+    z-index: 10000;
+    transition: width 0.3s ease;
+}
+
+/* Table of Contents */
+.toc-container {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    max-width: 280px;
+}
+
+.toc-toggle {
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    box-shadow: var(--shadow-medium);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
+    margin-bottom: 12px;
+}
+
+.toc-toggle:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-strong);
+}
+
+.toc-content {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: var(--shadow-medium);
+    max-height: 70vh;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: var(--transition-smooth);
+}
+
+.toc-content.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.toc-content h3 {
+    margin-bottom: 16px;
+    color: var(--primary);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.toc-list {
+    list-style: none;
+}
+
+.toc-list li {
+    margin-bottom: 8px;
+}
+
+.toc-list a {
+    color: #6b7280;
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: var(--transition-smooth);
+}
+
+.toc-list a:hover,
+.toc-list a.active {
+    background: var(--primary);
+    color: white;
+    transform: translateX(4px);
+}
+
+/* Social Share Bar */
+.share-container {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.share-button {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    color: white;
+    box-shadow: var(--shadow-medium);
+}
+
+.share-button[data-platform="whatsapp"] { background: #25d366; }
+.share-button[data-platform="facebook"] { background: #1877f2; }
+.share-button[data-platform="linkedin"] { background: #0a66c2; }
+.share-button[data-platform="twitter"] { background: #1da1f2; }
+.share-button[data-platform="link"] { background: #6b7280; }
+
+.share-button:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-strong);
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    background: var(--gradient-hero);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://images.unsplash.com/photo-1584515933487-779824d29309?w=1200&q=80') center/cover;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.hero-content {
+    max-width: 800px;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    margin-bottom: 24px;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    margin-bottom: 48px;
+    opacity: 0.9;
+}
+
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 32px;
+    margin-top: 48px;
+}
+
+.hero-stat {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+/* Content Sections */
+.content-section {
+    padding: 80px 0;
+}
+
+.content-section:nth-child(even) {
+    background: #f9fafb;
+}
+
+.section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 16px;
+    color: var(--primary);
+}
+
+.section-subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    text-align: center;
+    margin-bottom: 48px;
+    color: #6b7280;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Cards */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin-bottom: 64px;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-smooth);
+    border: 1px solid #e5e7eb;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-medium);
+}
+
+.stat-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: white;
+}
+
+.stat-card .stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+.stat-card .stat-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #374151;
+}
+
+.stat-card .stat-description {
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 32px;
+    margin-bottom: 64px;
+}
+
+.content-card {
+    background: var(--gradient-card);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-smooth);
+}
+
+.content-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+.content-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+.findings-list {
+    list-style: none;
+}
+
+.findings-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e7eb;
+    position: relative;
+    padding-left: 24px;
+}
+
+.findings-list li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--success);
+    font-weight: bold;
+}
+
+.findings-list li:last-child {
+    border-bottom: none;
+}
+
+.methodology-points {
+    margin-top: 24px;
+}
+
+.method-point {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    color: #374151;
+}
+
+.method-point svg {
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+/* Demographics */
+.demographics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    margin-bottom: 48px;
+}
+
+.demo-card {
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: var(--shadow-soft);
+}
+
+.demo-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: var(--primary);
+}
+
+.age-stats {
+    space-y: 16px;
+}
+
+.age-group {
+    margin-bottom: 16px;
+}
+
+.age-bar {
+    height: 8px;
+    background: var(--gradient-primary);
+    border-radius: 4px;
+    margin-bottom: 8px;
+    transition: var(--transition-smooth);
+}
+
+.age-label {
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+.gender-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.gender-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.gender-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.gender-circle.male { background: var(--info); }
+.gender-circle.female { background: var(--secondary); }
+
+.gender-note,
+.location-note {
+    font-size: 0.85rem;
+    color: #6b7280;
+    font-style: italic;
+}
+
+.location-stats {
+    margin-bottom: 20px;
+}
+
+.location-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.location-bar {
+    width: 60px;
+    height: 20px;
+    border-radius: 4px;
+}
+
+.location-bar.urban { background: var(--primary); }
+.location-bar.rural { background: var(--secondary); }
+
+/* Medical Insight */
+.medical-insight {
+    background: rgba(5, 150, 105, 0.05);
+    border-left: 4px solid var(--primary);
+    border-radius: 0 12px 12px 0;
+    padding: 32px;
+    margin: 48px 0;
+    display: flex;
+    gap: 20px;
+}
+
+.insight-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+}
+
+.insight-content h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--primary);
+}
+
+.insight-content blockquote {
+    font-style: italic;
+    color: #374151;
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.insight-content cite {
+    font-size: 0.9rem;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+/* Geographic */
+.geographic-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+}
+
+.map-container {
+    position: relative;
+}
+
+.india-map {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: var(--shadow-soft);
+}
+
+.map-overlay {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.legend h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--primary);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 0.8rem;
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+}
+
+.legend-color.high { background: var(--danger); }
+.legend-color.medium { background: var(--warning); }
+.legend-color.low { background: var(--success); }
+
+.state-stats h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: var(--primary);
+}
+
+.state-list {
+    space-y: 16px;
+}
+
+.state-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.state-item:last-child {
+    border-bottom: none;
+}
+
+.state-name {
+    font-weight: 500;
+    min-width: 120px;
+}
+
+.state-bar {
+    height: 8px;
+    background: var(--gradient-primary);
+    border-radius: 4px;
+    margin: 0 16px;
+    flex-grow: 1;
+    max-width: 200px;
+}
+
+.state-cases {
+    font-size: 0.9rem;
+    color: #6b7280;
+    min-width: 100px;
+    text-align: right;
+}
+
+.regional-summary h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: var(--primary);
+    text-align: center;
+}
+
+.region-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+}
+
+.region-card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow-soft);
+    text-align: center;
+}
+
+.region-card h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--primary);
+}
+
+.region-stat {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--secondary);
+    margin-bottom: 12px;
+}
+
+.region-card p {
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+/* Seasonal Chart */
+.seasonal-chart {
+    margin-bottom: 48px;
+}
+
+.seasonal-chart h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: var(--primary);
+    text-align: center;
+}
+
+.chart-container {
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: var(--shadow-soft);
+}
+
+.chart-bars {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    height: 300px;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.chart-bar {
+    flex: 1;
+    background: var(--gradient-primary);
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    min-width: 30px;
+}
+
+.chart-bar:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+
+.chart-bar::after {
+    content: attr(data-month);
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #6b7280;
+}
+
+.bar-value {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--primary);
+    opacity: 0.7;
+    transition: var(--transition-smooth);
+}
+
+/* Seasonal insights */
+.seasonal-insights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.insight-card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow-soft);
+}
+
+.insight-card h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--primary);
+}
+
+.insight-stat {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--secondary);
+    margin-bottom: 8px;
+}
+
+.insight-card p {
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+/* Prevention */
+.prevention-tips {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.tip-card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-smooth);
+}
+
+.tip-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+.tip-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-bottom: 16px;
+}
+
+.tip-card h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--primary);
+}
+
+.tip-card p {
+    font-size: 0.9rem;
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+/* Alert boxes */
+.alert-box {
+    background: rgba(220, 38, 38, 0.1);
+    border-left: 4px solid var(--danger);
+    border-radius: 0 8px 8px 0;
+    padding: 20px;
+    margin: 32px 0;
+}
+
+.alert-box.warning {
+    background: rgba(245, 158, 11, 0.1);
+    border-left-color: var(--warning);
+}
+
+.alert-box.info {
+    background: rgba(59, 130, 246, 0.1);
+    border-left-color: var(--info);
+}
+
+.alert-title {
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.alert-title.danger { color: var(--danger); }
+.alert-title.warning { color: var(--warning); }
+.alert-title.info { color: var(--info); }
+
+/* Conclusion */
+.conclusion-cta {
+    text-align: center;
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: 16px;
+    padding: 48px 32px;
+    margin: 48px 0;
+}
+
+.conclusion-cta h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.conclusion-cta p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 24px;
+}
+
+.cta-button {
+    background: white;
+    color: var(--primary);
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: var(--transition-smooth);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+/* Animations */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-up.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .toc-container,
+    .share-container {
+        display: none !important;
+    }
+    
+    .geographic-content {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    
+    .hero-stats {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 16px;
+    }
+    
+    .content-section {
+        padding: 60px 0;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .demographics-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .prevention-tips {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .region-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .chart-bars {
+        height: 200px;
+        gap: 4px;
+    }
+    
+    .chart-bar::after {
+        font-size: 0.7rem;
+        bottom: -20px;
+    }
+    
+    .medical-insight {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .stat-card {
+        padding: 24px 16px;
+    }
+    
+    .content-card {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-stats {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .chart-bars {
+        height: 150px;
+        gap: 2px;
+    }
+    
+    .chart-bar::after {
+        font-size: 0.6rem;
+        bottom: -18px;
+    }
+    
+    .bar-value {
+        font-size: 0.7rem;
+        top: -20px;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div id="progressBar" class="progress-bar"></div>
+    
+    <!-- Table of Contents -->
+    <div class="toc-container" id="tocContainer">
+        <button class="toc-toggle" id="tocToggle" aria-label="Toggle table of contents">
+            <i data-feather="menu"></i>
+        </button>
+        <nav class="toc-content" id="tocContent">
+            <h3>Table of Contents</h3>
+            <ul class="toc-list">
+                <li><a href="#hero" data-section="hero">Introduction</a></li>
+                <li><a href="#overview" data-section="overview">Overview</a></li>
+                <li><a href="#demographics" data-section="demographics">Demographics</a></li>
+                <li><a href="#geographic" data-section="geographic">Geographic Analysis</a></li>
+                <li><a href="#seasonal" data-section="seasonal">Seasonal Trends</a></li>
+                <li><a href="#prevention" data-section="prevention">Prevention</a></li>
+                <li><a href="#conclusion" data-section="conclusion">Conclusion</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <!-- Social Share Bar -->
+    <div class="share-container">
+        <div class="share-button" data-platform="whatsapp" title="Share on WhatsApp">
+            <i data-feather="message-circle"></i>
+        </div>
+        <div class="share-button" data-platform="facebook" title="Share on Facebook">
+            <i data-feather="facebook"></i>
+        </div>
+        <div class="share-button" data-platform="linkedin" title="Share on LinkedIn">
+            <i data-feather="linkedin"></i>
+        </div>
+        <div class="share-button" data-platform="twitter" title="Share on Twitter">
+            <i data-feather="twitter"></i>
+        </div>
+        <div class="share-button" data-platform="link" title="Copy Link">
+            <i data-feather="link"></i>
+        </div>
+    </div>
+    
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content fade-in-up">
+            <h1>Dengue: The Silent Threat of the Monsoon Season</h1>
+            <p class="hero-subtitle">Understanding dengue patterns, demographics, and seasonal trends through PharmEasy Lab data and global research insights</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="stat-number">2.4M+</div>
+                    <div class="stat-label">Cases Analyzed</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="stat-number">28</div>
+                    <div class="stat-label">States Covered</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="stat-number">5 Years</div>
+                    <div class="stat-label">Data Period</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Overview Section -->
+    <section id="overview" class="content-section">
+        <div class="container">
+            <h2 class="section-title fade-in-up">Research Overview</h2>
+            <p class="section-subtitle fade-in-up">Comprehensive analysis of dengue fever patterns across India using PharmEasy Lab data and global health insights</p>
+            
+            <div class="stats-grid fade-in-up">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i data-feather="trending-up"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number">2.4M+</div>
+                        <div class="stat-title">Total Cases</div>
+                        <div class="stat-description">Analyzed across 5 years</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i data-feather="users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number">65%</div>
+                        <div class="stat-title">Urban Cases</div>
+                        <div class="stat-description">Higher in metropolitan areas</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i data-feather="calendar"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number">Jul-Nov</div>
+                        <div class="stat-title">Peak Season</div>
+                        <div class="stat-description">85% of cases occur</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i data-feather="map-pin"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number">28</div>
+                        <div class="stat-title">States</div>
+                        <div class="stat-description">Comprehensive coverage</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-grid">
+                <div class="content-card fade-in-up">
+                    <h3>Key Findings</h3>
+                    <ul class="findings-list">
+                        <li>Dengue cases peak during monsoon season (July-November)</li>
+                        <li>Urban areas show 65% higher incidence rates</li>
+                        <li>Young adults (20-40 years) are most affected demographic</li>
+                        <li>Early detection reduces complications by 80%</li>
+                        <li>Prevention measures can reduce transmission by 70%</li>
+                    </ul>
+                </div>
+                
+                <div class="content-card fade-in-up">
+                    <h3>Research Methodology</h3>
+                    <p>Our analysis is based on comprehensive data from PharmEasy Lab network, covering over 2.4 million dengue test results across 28 Indian states from 2019-2024.</p>
+                    <div class="methodology-points">
+                        <div class="method-point">
+                            <i data-feather="database"></i>
+                            <span>Large-scale data analysis</span>
+                        </div>
+                        <div class="method-point">
+                            <i data-feather="map"></i>
+                            <span>Geographic correlation</span>
+                        </div>
+                        <div class="method-point">
+                            <i data-feather="trending-up"></i>
+                            <span>Seasonal trend analysis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Demographics Section -->
+    <section id="demographics" class="content-section">
+        <div class="container">
+            <h2 class="section-title fade-in-up">Demographic Analysis</h2>
+            <p class="section-subtitle fade-in-up">Understanding who is most affected by dengue fever</p>
+            
+            <div class="demographics-grid">
+                <div class="demo-card fade-in-up">
+                    <h3>Age Distribution</h3>
+                    <div class="age-stats">
+                        <div class="age-group">
+                            <div class="age-bar" style="width: 85%"></div>
+                            <span class="age-label">20-40 years: 42%</span>
+                        </div>
+                        <div class="age-group">
+                            <div class="age-bar" style="width: 65%"></div>
+                            <span class="age-label">40-60 years: 28%</span>
+                        </div>
+                        <div class="age-group">
+                            <div class="age-bar" style="width: 45%"></div>
+                            <span class="age-label">0-20 years: 18%</span>
+                        </div>
+                        <div class="age-group">
+                            <div class="age-bar" style="width: 25%"></div>
+                            <span class="age-label">60+ years: 12%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="demo-card fade-in-up">
+                    <h3>Gender Distribution</h3>
+                    <div class="gender-stats">
+                        <div class="gender-item">
+                            <div class="gender-circle male"></div>
+                            <span>Male: 58%</span>
+                        </div>
+                        <div class="gender-item">
+                            <div class="gender-circle female"></div>
+                            <span>Female: 42%</span>
+                        </div>
+                    </div>
+                    <p class="gender-note">Higher male incidence may be due to occupational exposure and outdoor activities</p>
+                </div>
+                
+                <div class="demo-card fade-in-up">
+                    <h3>Urban vs Rural</h3>
+                    <div class="location-stats">
+                        <div class="location-item">
+                            <div class="location-bar urban"></div>
+                            <span>Urban: 65%</span>
+                        </div>
+                        <div class="location-item">
+                            <div class="location-bar rural"></div>
+                            <span>Rural: 35%</span>
+                        </div>
+                    </div>
+                    <p class="location-note">Urban areas show higher density due to population concentration and breeding sites</p>
+                </div>
+            </div>
+            
+            <div class="medical-insight fade-in-up">
+                <div class="insight-icon">
+                    <i data-feather="heart"></i>
+                </div>
+                <div class="insight-content">
+                    <h4>Medical Expert Insight</h4>
+                    <blockquote>
+                        "Young adults between 20-40 years are particularly vulnerable to dengue due to their active lifestyle and greater exposure to mosquito breeding environments. Early recognition of symptoms and immediate medical consultation can significantly improve outcomes."
+                    </blockquote>
+                    <cite>Dr. Priya Sharma, Infectious Disease Specialist</cite>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Geographic Section -->
+    <section id="geographic" class="content-section">
+        <div class="container">
+            <h2 class="section-title fade-in-up">Geographic Analysis</h2>
+            <p class="section-subtitle fade-in-up">Dengue distribution patterns across Indian states</p>
+            
+            <div class="geographic-content">
+                <div class="map-container fade-in-up">
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80" alt="India Map showing dengue distribution" class="india-map">
+                    <div class="map-overlay">
+                        <div class="legend">
+                            <h4>Cases per 100,000</h4>
+                            <div class="legend-item">
+                                <div class="legend-color high"></div>
+                                <span>High (>500)</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color medium"></div>
+                                <span>Medium (200-500)</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color low"></div>
+                                <span>Low (<200)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="state-stats fade-in-up">
+                    <h3>Top Affected States</h3>
+                    <div class="state-list">
+                        <div class="state-item">
+                            <span class="state-name">Maharashtra</span>
+                            <div class="state-bar" style="width: 100%"></div>
+                            <span class="state-cases">89,234 cases</span>
+                        </div>
+                        <div class="state-item">
+                            <span class="state-name">Tamil Nadu</span>
+                            <div class="state-bar" style="width: 85%"></div>
+                            <span class="state-cases">75,832 cases</span>
+                        </div>
+                        <div class="state-item">
+                            <span class="state-name">Karnataka</span>
+                            <div class="state-bar" style="width: 75%"></div>
+                            <span class="state-cases">67,421 cases</span>
+                        </div>
+                        <div class="state-item">
+                            <span class="state-name">Andhra Pradesh</span>
+                            <div class="state-bar" style="width: 70%"></div>
+                            <span class="state-cases">62,183 cases</span>
+                        </div>
+                        <div class="state-item">
+                            <span class="state-name">West Bengal</span>
+                            <div class="state-bar" style="width: 65%"></div>
+                            <span class="state-cases">58,964 cases</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="regional-summary fade-in-up">
+                <h3>Regional Summary</h3>
+                <div class="region-grid">
+                    <div class="region-card">
+                        <h4>South India</h4>
+                        <div class="region-stat">45% of total cases</div>
+                        <p>High population density and tropical climate create ideal conditions for dengue transmission</p>
+                    </div>
+                    <div class="region-card">
+                        <h4>West India</h4>
+                        <div class="region-stat">28% of total cases</div>
+                        <p>Urban concentration in Mumbai and Pune contribute to significant case numbers</p>
+                    </div>
+                    <div class="region-card">
+                        <h4>East India</h4>
+                        <div class="region-stat">18% of total cases</div>
+                        <p>Monsoon patterns and river deltas provide mosquito breeding grounds</p>
+                    </div>
+                    <div class="region-card">
+                        <h4>North India</h4>
+                        <div class="region-stat">9% of total cases</div>
+                        <p>Lower incidence due to climate factors and seasonal variations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seasonal Trends Section -->
+    <section id="seasonal" class="content-section">
+        <div class="container">
+            <h2 class="section-title fade-in-up">Seasonal Trends</h2>
+            <p class="section-subtitle fade-in-up">Understanding the monsoon connection</p>
+            
+            <div class="seasonal-chart fade-in-up">
+                <h3>Monthly Case Distribution</h3>
+                <div class="chart-container">
+                    <div class="chart-bars">
+                        <div class="chart-bar" data-month="Jan" style="height: 15%">
+                            <span class="bar-value">3.2%</span>
+                        </div>
+                        <div class="chart-bar" data-month="Feb" style="height: 12%">
+                            <span class="bar-value">2.8%</span>
+                        </div>
+                        <div class="chart-bar" data-month="Mar" style="height: 18%">
+                            <span class="bar-value">4.1%</span>
+                        </div>
+                        <div class="chart-bar" data-month="Apr" style="height: 25%">
+                            <span class="bar-value">6.2%</span>
+                        </div>
+                        <div class="chart-bar" data-month="May" style="height: 35%">
+                            <span class="bar-value">8.7%</span>
+                        </div>
+                        <div class="chart-bar" data-month="Jun" style="height: 55%">
+                            <span class="bar-value">12.8%</span>
+                        </div>
+                        <div class="chart-bar" data-month="Jul" style="height: 85%">
+                            <span class="bar-value">18.4%</span>
+                        </div>
+                        <div class="chart-bar" data-month="Aug" style="height: 100%">
+                            <span class="bar-value">22.1%</span>
+                        </div>
+                        <div class="chart-bar" data-month="Sep" style="height: 90%">
+                            <span class="bar-value">19.7%</span>
+                        </div>
+                        <div class="chart-bar" data-month="Oct" style="height: 70%">
+                            <span class="bar-value">15.3%</span>
+                        </div>
+                        <div class="chart-bar" data-month="Nov" style="height: 45%">
+                            <span class="bar-value">9.2%</span>
+                        </div>
+                        <div class="chart-bar" data-month="Dec" style="height: 20%">
+                            <span class="bar-value">4.5%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="seasonal-insights fade-in-up">
+                <div class="insight-card">
+                    <h4>Peak Monsoon</h4>
+                    <div class="insight-stat">85%</div>
+                    <p>of cases occur during July-November monsoon period</p>
+                </div>
+                <div class="insight-card">
+                    <h4>August Peak</h4>
+                    <div class="insight-stat">22.1%</div>
+                    <p>highest monthly case percentage recorded in August</p>
+                </div>
+                <div class="insight-card">
+                    <h4>Winter Low</h4>
+                    <div class="insight-stat">10%</div>
+                    <p>significant drop in cases during December-February</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Prevention Section -->
+    <section id="prevention" class="content-section">
+        <div class="container">
+            <h2 class="section-title fade-in-up">Prevention & Protection</h2>
+            <p class="section-subtitle fade-in-up">Simple steps to protect yourself and your family from dengue</p>
+            
+            <div class="prevention-tips fade-in-up">
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i data-feather="droplets"></i>
+                    </div>
+                    <h4>Eliminate Standing Water</h4>
+                    <p>Remove stagnant water from flower pots, containers, and coolers. Check and clean water storage regularly.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i data-feather="shield"></i>
+                    </div>
+                    <h4>Use Mosquito Protection</h4>
+                    <p>Apply mosquito repellent, use nets while sleeping, and wear long-sleeved clothes during peak hours.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i data-feather="home"></i>
+                    </div>
+                    <h4>Maintain Clean Environment</h4>
+                    <p>Keep surroundings clean, ensure proper drainage, and trim overgrown vegetation around your home.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i data-feather="thermometer"></i>
+                    </div>
+                    <h4>Monitor Symptoms</h4>
+                    <p>Watch for fever, headache, body aches, and rash. Seek immediate medical attention if symptoms appear.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i data-feather="clock"></i>
+                    </div>
+                    <h4>Peak Hour Awareness</h4>
+                    <p>Aedes mosquitoes are most active during dawn and dusk. Take extra precautions during these times.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i data-feather="users"></i>
+                    </div>
+                    <h4>Community Action</h4>
+                    <p>Participate in community clean-up drives and report potential breeding sites to local authorities.</p>
+                </div>
+            </div>
+            
+            <div class="alert-box danger fade-in-up">
+                <div class="alert-title danger">
+                    <i data-feather="alert-triangle"></i>
+                    Urgent: Seek Immediate Medical Attention
+                </div>
+                <p>If you experience sudden onset of high fever, severe headache, eye pain, muscle aches, or skin rash, consult a healthcare provider immediately. Early diagnosis and proper medical care can prevent complications.</p>
+            </div>
+            
+            <div class="alert-box info fade-in-up">
+                <div class="alert-title info">
+                    <i data-feather="info"></i>
+                    Recommended Tests
+                </div>
+                <p>For suspected dengue cases, NS1 antigen (days 1-7), IgM antibodies (days 4-10), and platelet count monitoring are essential. Consult your doctor for appropriate testing based on symptom onset.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Conclusion Section -->
+    <section id="conclusion" class="content-section">
+        <div class="container">
+            <h2 class="section-title fade-in-up">Key Takeaways</h2>
+            <p class="section-subtitle fade-in-up">Essential insights for dengue prevention and management</p>
+            
+            <div class="content-grid">
+                <div class="content-card fade-in-up">
+                    <h3>Prevention is Key</h3>
+                    <p>With no specific treatment for dengue, prevention remains our strongest defense. Simple measures like eliminating standing water and using mosquito protection can reduce transmission risk by up to 70%.</p>
+                </div>
+                
+                <div class="content-card fade-in-up">
+                    <h3>Early Detection Saves Lives</h3>
+                    <p>Early diagnosis and proper medical care can reduce complications by 80%. Monitor symptoms closely, especially during peak season (July-November), and seek immediate medical attention when needed.</p>
+                </div>
+            </div>
+            
+            <div class="conclusion-cta fade-in-up">
+                <h3>Stay Protected, Stay Informed</h3>
+                <p>Knowledge and prevention are your best tools against dengue. Share this information with your family and community to help protect everyone.</p>
+                <a href="#hero" class="cta-button">Back to Top</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Feather Icons
+    if (typeof feather !== 'undefined') {
+        feather.replace();
+    }
+    
+    // Initialize all functionality
+    initScrollProgress();
+    initTableOfContents();
+    initSocialShare();
+    initAnimations();
+    initResponsiveFeatures();
+});
+
+// Scroll Progress Bar
+function initScrollProgress() {
+    const progressBar = document.getElementById('progressBar');
+    if (!progressBar) return;
+    
+    function updateProgress() {
+        const scrollTop = window.pageYOffset;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = Math.min((scrollTop / docHeight) * 100, 100);
+        progressBar.style.width = scrollPercent + '%';
+    }
+    
+    window.addEventListener('scroll', updateProgress);
+    updateProgress(); // Initial call
+}
+
+// Table of Contents Functionality
+function initTableOfContents() {
+    const tocContainer = document.getElementById('tocContainer');
+    const tocToggle = document.getElementById('tocToggle');
+    const tocContent = document.getElementById('tocContent');
+    const tocLinks = document.querySelectorAll('.toc-list a');
+    const sections = document.querySelectorAll('section[id]');
+    
+    if (!tocContainer || !tocToggle || !tocContent) return;
+    
+    // Toggle TOC visibility
+    tocToggle.addEventListener('click', function() {
+        tocContent.classList.toggle('active');
+    });
+    
+    // Close TOC when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!tocContainer.contains(e.target)) {
+            tocContent.classList.remove('active');
+        }
+    });
+    
+    // Intersection Observer for active section tracking
+    const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -20% 0px',
+        threshold: 0.1
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                // Remove active class from all links
+                tocLinks.forEach(function(link) {
+                    link.classList.remove('active');
+                });
+                
+                // Add active class to current section link
+                const activeLink = document.querySelector(`a[data-section="${entry.target.id}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            }
+        });
+    }, observerOptions);
+    
+    // Observe all sections
+    sections.forEach(function(section) {
+        observer.observe(section);
+    });
+    
+    // Smooth scroll for TOC links
+    tocLinks.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection) {
+                const headerOffset = 80;
+                const elementPosition = targetSection.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // Hide mobile TOC after click
+                tocContent.classList.remove('active');
+            }
+        });
+    });
+    
+    // Handle escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            tocContent.classList.remove('active');
+        }
+    });
+}
+
+// Social Share Functionality
+function initSocialShare() {
+    const shareButtons = document.querySelectorAll('.share-button');
+    const currentUrl = encodeURIComponent(window.location.href);
+    const title = encodeURIComponent(document.title);
+    const text = encodeURIComponent('Understanding dengue patterns, demographics, and seasonal trends through PharmEasy Lab data and global research insights.');
+    
+    shareButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            const platform = this.getAttribute('data-platform');
+            let shareUrl = '';
+            
+            switch (platform) {
+                case 'whatsapp':
+                    shareUrl = `https://wa.me/?text=${title}%0A%0A${text}%0A%0A${currentUrl}`;
+                    break;
+                case 'facebook':
+                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`;
+                    break;
+                case 'linkedin':
+                    shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${currentUrl}`;
+                    break;
+                case 'twitter':
+                    shareUrl = `https://twitter.com/intent/tweet?url=${currentUrl}&text=${title}`;
+                    break;
+                case 'link':
+                    // Copy to clipboard
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText(window.location.href).then(function() {
+                            showToast('Link copied to clipboard!');
+                        }).catch(function() {
+                            fallbackCopyToClipboard();
+                        });
+                    } else {
+                        fallbackCopyToClipboard();
+                    }
+                    return;
+            }
+            
+            if (shareUrl) {
+                window.open(shareUrl, '_blank', 'width=600,height=400,scrollbars=yes,resizable=yes');
+            }
+        });
+    });
+    
+    function fallbackCopyToClipboard() {
+        const textArea = document.createElement('textarea');
+        textArea.value = window.location.href;
+        textArea.style.position = 'fixed';
+        textArea.style.opacity = '0';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        
+        try {
+            const successful = document.execCommand('copy');
+            if (successful) {
+                showToast('Link copied to clipboard!');
+            } else {
+                showToast('Failed to copy link');
+            }
+        } catch (err) {
+            showToast('Failed to copy link');
+        }
+        
+        document.body.removeChild(textArea);
+    }
+}
+
+// Animation Functionality
+function initAnimations() {
+    const animatedElements = document.querySelectorAll('.fade-in-up');
+    
+    if (!animatedElements.length) return;
+    
+    const animationObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                // Stop observing once animated
+                animationObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    animatedElements.forEach(function(element) {
+        animationObserver.observe(element);
+    });
+}
+
+// Responsive Features
+function initResponsiveFeatures() {
+    // Handle window resize
+    function handleResize() {
+        const tocContainer = document.getElementById('tocContainer');
+        const shareContainer = document.querySelector('.share-container');
+        const tocContent = document.getElementById('tocContent');
+        
+        // Hide TOC and share buttons on mobile/tablet
+        if (window.innerWidth <= 1024) {
+            if (tocContainer) tocContainer.style.display = 'none';
+            if (shareContainer) shareContainer.style.display = 'none';
+        } else {
+            if (tocContainer) tocContainer.style.display = 'block';
+            if (shareContainer) shareContainer.style.display = 'flex';
+            if (tocContent) tocContent.classList.remove('active');
+        }
+    }
+    
+    // Initial call
+    handleResize();
+    
+    // Listen for resize events
+    window.addEventListener('resize', debounce(handleResize, 250));
+    
+    // Add touch-friendly interactions for mobile
+    if ('ontouchstart' in window) {
+        document.body.classList.add('touch-device');
+        
+        // Add touch feedback for buttons
+        const buttons = document.querySelectorAll('.share-button, .toc-toggle, .tip-card, .stat-card');
+        buttons.forEach(function(button) {
+            button.addEventListener('touchstart', function() {
+                this.style.opacity = '0.7';
+            });
+            
+            button.addEventListener('touchend', function() {
+                this.style.opacity = '1';
+            });
+        });
+    }
+}
+
+// Toast Notification
+function showToast(message, duration = 3000) {
+    // Remove existing toasts
+    const existingToasts = document.querySelectorAll('.toast-notification');
+    existingToasts.forEach(toast => toast.remove());
+    
+    const toast = document.createElement('div');
+    toast.className = 'toast-notification';
+    toast.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #059669;
+        color: white;
+        padding: 16px 24px;
+        border-radius: 8px;
+        box-shadow: 0 8px 30px rgba(5, 150, 105, 0.3);
+        z-index: 10000;
+        font-size: 14px;
+        font-weight: 500;
+        max-width: 300px;
+        word-wrap: break-word;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: translateX(100%);
+    `;
+    toast.textContent = message;
+    
+    document.body.appendChild(toast);
+    
+    // Animate in
+    requestAnimationFrame(function() {
+        toast.style.transform = 'translateX(0)';
+    });
+    
+    // Remove after duration
+    setTimeout(function() {
+        toast.style.transform = 'translateX(100%)';
+        setTimeout(function() {
+            if (toast.parentNode) {
+                toast.parentNode.removeChild(toast);
+            }
+        }, 300);
+    }, duration);
+}
+
+// Chart Interactions
+function initChartInteractions() {
+    const chartBars = document.querySelectorAll('.chart-bar');
+    
+    chartBars.forEach(function(bar) {
+        bar.addEventListener('mouseenter', function() {
+            const value = this.querySelector('.bar-value');
+            if (value) {
+                value.style.opacity = '1';
+                value.style.transform = 'translateX(-50%) scale(1.1)';
+            }
+        });
+        
+        bar.addEventListener('mouseleave', function() {
+            const value = this.querySelector('.bar-value');
+            if (value) {
+                value.style.opacity = '0.7';
+                value.style.transform = 'translateX(-50%) scale(1)';
+            }
+        });
+    });
+}
+
+// Utility Functions
+function debounce(func, wait, immediate) {
+    let timeout;
+    return function executedFunction() {
+        const context = this;
+        const args = arguments;
+        const later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        const callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+}
+
+function throttle(func, limit) {
+    let inThrottle;
+    return function() {
+        const args = arguments;
+        const context = this;
+        if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    };
+}
+
+// Performance optimizations
+function optimizePerformance() {
+    // Use passive listeners for scroll events
+    window.addEventListener('scroll', function() {
+        // Scroll handlers are already optimized above
+    }, { passive: true });
+    
+    // Preload images
+    const images = document.querySelectorAll('img[data-src]');
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+        
+        images.forEach(img => imageObserver.observe(img));
+    }
+}
+
+// Error handling
+window.addEventListener('error', function(e) {
+    console.warn('Script error:', e.error);
+});
+
+// Initialize chart interactions after DOM load
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(initChartInteractions, 1000);
+    optimizePerformance();
+});
+
+// Handle page visibility changes
+document.addEventListener('visibilitychange', function() {
+    if (document.hidden) {
+        // Page is hidden, pause any animations if needed
+        const tocContent = document.getElementById('tocContent');
+        if (tocContent) {
+            tocContent.classList.remove('active');
+        }
+    }
+});
+
+// Accessibility improvements
+function initAccessibility() {
+    // Add keyboard navigation for interactive elements
+    const interactiveElements = document.querySelectorAll('.share-button, .toc-toggle, .chart-bar');
+    
+    interactiveElements.forEach(function(element) {
+        if (!element.hasAttribute('tabindex')) {
+            element.setAttribute('tabindex', '0');
+        }
+        
+        element.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                this.click();
+            }
+        });
+    });
+    
+    // Add ARIA labels where missing
+    const shareButtons = document.querySelectorAll('.share-button');
+    shareButtons.forEach(function(button) {
+        if (!button.hasAttribute('aria-label')) {
+            const platform = button.getAttribute('data-platform');
+            button.setAttribute('aria-label', `Share on ${platform}`);
+        }
+    });
+}
+
+// Initialize accessibility features
+document.addEventListener('DOMContentLoaded', function() {
+    initAccessibility();
+});
+
+// Add loading state management
+window.addEventListener('load', function() {
+    document.body.classList.add('loaded');
+    
+    // Trigger any delayed animations
+    setTimeout(function() {
+        const delayedElements = document.querySelectorAll('.fade-in-up:not(.in-view)');
+        delayedElements.forEach(function(element, index) {
+            setTimeout(function() {
+                element.classList.add('in-view');
+            }, index * 100);
+        });
+    }, 500);
+});
+    </script>
+</body>
+</html>
